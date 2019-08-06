@@ -52,7 +52,7 @@
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   };
 
-  class Product{
+  class Product {
     cosntructor(){
       const thisProduct = this;
       console.log('new Product:', thisProduct)
