@@ -57,7 +57,7 @@
       const thisProduct = this;
       console.log('new Product:', thisProduct)
     }
-  }
+  };
 
   const app = {
     init: function(){
@@ -70,5 +70,11 @@
     },
   };
 
-  app.init();
+    app.initMenu(){
+    const testProduct = new Product();
+    console.log('testProduct:', testProduct);
+    }
+
+    app.init();
+
 }
