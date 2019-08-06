@@ -75,6 +75,7 @@
     console.log('testProduct:', testProduct);
     }
 
+
     app.init();
 
 }
