@@ -55,9 +55,24 @@
   class Product{
     constructor(id, data){
       const thisProduct = this;
+
       thisProduct.id = id;
       thisProduct.data = data;
+
+      thisProduct.renderInMenu();
+
       console.log('new Product:', thisProduct)
+    }
+      renderInMenu(){
+        const thisProduct = this;
+
+        /* generate HTML based on template*/
+
+        /* create element using utils.createElementFromHTML */
+
+        /* find menu container */
+
+        /* add element to menu */
       }
     };
 
