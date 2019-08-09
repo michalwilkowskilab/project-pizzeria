@@ -84,17 +84,17 @@
       const thisProduct = this;
 
       /* find the clickable trigger (the element that should react to clicking) */
-      const productHeader = document.querySelectorAll('.product__name ')
+      const productHeader = document.querySelector('.product__name ')
       console.log(productHeader);
 
     /* START: click event listener to trigger */
-    const clickedElement = document.getElementById('template-menu-product');
+    const buttonClicked = document.getElementById('product-list');
+    buttonClicked.addEventListener('click', function(event){
+    console.log('clicked')
 
-    clickedElement.addEventListener('click', function(event){
-      console.log('clicked');
       /* prevent default action for event */
       event.preventDefault();
-      });
+
       /* toggle active class on element of thisProduct */
 
       /* find all active products */
@@ -110,6 +110,7 @@
       /* END LOOP: for each active product */
 
     /* END: click event listener to trigger */
+    });
     }
   }
 
