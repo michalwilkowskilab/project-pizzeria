@@ -84,7 +84,8 @@
       const thisProduct = this;
 
       /* find the clickable trigger (the element that should react to clicking) */
-
+      const productHeader = document.querySelectorAll('.product__name ')
+      console.log(productHeader);
     /* START: click event listener to trigger */
 
       /* prevent default action for event */
