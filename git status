@@ -1,0 +1,24 @@
+* [33md7ce151[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Init LOOP
+* [33m1fe95d9[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Add class active
+* [33maf39b78[m Add class active on element of thisProduct
+* [33m2d58b0a[m Correct init addEventListener
+* [33m5e5b17d[m Add addEventListener
+* [33m100088c[m Add const productHeader
+* [33m83fad41[m Init method initAccordion in class Product
+* [33m282b8dc[m Correct remove active
+* [33m3f97abd[m Add element to menu
+* [33m38d4363[m Find menu container
+* [33m2f501bb[m Create DOM element
+* [33m2c080ad[m Generate HTML in class Product
+* [33mb8971c7[m Init method renderInMenu for class Product
+* [33mcb4a38a[m Add arguments to constructor
+* [33md2b584a[m Add loop for app.initMenu
+* [33mc8daa8c[m Init Loop for app.initMenu
+* [33mb5c27b0[m Add thisApp.initData();
+* [33mf4b3cca[m Correct constructor
+* [33mf4a676e[m Correct app.initMenu
+* [33m5709750[m Add app.initMenu
+* [33mf8ceb48[m Add app.initMenu
+* [33m4fb9ae1[m Add style.css empty file
+* [33ma451d5f[m Run npm install and add class Product
+* [33m724c127[m Initial commit
