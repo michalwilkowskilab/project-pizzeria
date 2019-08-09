@@ -86,10 +86,15 @@
       /* find the clickable trigger (the element that should react to clicking) */
       const productHeader = document.querySelectorAll('.product__name ')
       console.log(productHeader);
+
     /* START: click event listener to trigger */
+    const clickedElement = document.getElementById('template-menu-product');
 
+    clickedElement.addEventListener('click', function(event){
+      console.log('clicked');
       /* prevent default action for event */
-
+      event.preventDefault();
+      });
       /* toggle active class on element of thisProduct */
 
       /* find all active products */
