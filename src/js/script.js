@@ -96,7 +96,8 @@
       event.preventDefault();
 
       /* toggle active class on element of thisProduct */
-
+      productHeader.classList.add('active')
+      console.log(productHeader);
       /* find all active products */
 
       /* START LOOP: for each active product */
