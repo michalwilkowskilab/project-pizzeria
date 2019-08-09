@@ -60,26 +60,53 @@
       thisProduct.data = data;
 
       thisProduct.renderInMenu();
-
-      console.log('new Product:', thisProduct)
+      thisProduct.initAccordion();
+      console.log('new Product:', thisProduct);
     }
-      renderInMenu(){
-        const thisProduct = this;
+    renderInMenu(){
+      const thisProduct = this;
 
-        /* generate HTML based on template*/
-        const generatedHTML = templates.menuProduct(thisProduct.data);
-        //console.log(generatedHTML);
+      /* generate HTML based on template*/
+      const generatedHTML = templates.menuProduct(thisProduct.data);
+      //console.log(generatedHTML);
 
-        /* create element using utils.createElementFromHTML */
-        thisProduct.element = utils.createDOMFromHTML(generatedHTML);
+      /* create element using utils.createElementFromHTML */
+      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
 
-        /* find menu container */
-        const menuContainer = document.querySelector(select.containerOf.menu);
+      /* find menu container */
+      const menuContainer = document.querySelector(select.containerOf.menu);
 
-        /* add element to menu */
-        menuContainer.appendChild(thisProduct.element);
-      }
-    };
+      /* add element to menu */
+      menuContainer.appendChild(thisProduct.element);
+    }
+
+    initAccordion(){
+      const thisProduct = this;
+
+      /* find the clickable trigger (the element that should react to clicking) */
+
+    /* START: click event listener to trigger */
+
+      /* prevent default action for event */
+
+      /* toggle active class on element of thisProduct */
+
+      /* find all active products */
+
+      /* START LOOP: for each active product */
+
+        /* START: if the active product isn't the element of thisProduct */
+
+          /* remove class active for the active product */
+
+        /* END: if the active product isn't the element of thisProduct */
+
+      /* END LOOP: for each active product */
+
+    /* END: click event listener to trigger */
+    }
+  }
+
 
   const app = {
     initMenu: function(){
@@ -93,7 +120,7 @@
 
     initData: function(){
       const thisApp = this;
-      thisApp.data = dataSource
+      thisApp.data = dataSource;
     },
 
     init: function(){
