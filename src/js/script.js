@@ -84,7 +84,7 @@
       const thisProduct = this;
       console.log(thisProduct);
       /* find the clickable trigger (the element that should react to clicking) */
-      const productHeader = document.querySelector('.product__header');
+      const productHeader = document.querySelectorAll('.product__header');
       console.log(productHeader);
 
       /* START: click event listener to trigger */
@@ -96,11 +96,12 @@
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-        productHeader.classList.add('active');
-        console.log(productHeader);
-
+        for(let active of productHeader){
+        active.classList.add('active');
+        console.log(active);
+        }
         /* find all active products */
-        const activeProducts = document.querySelectorAll('product__name.no-spacing.active');
+        const activeProducts = document.querySelectorAll('product__header');
         console.log(activeProducts);
         /* START LOOP: for each active product */
         //for(let active of activeProducts){
