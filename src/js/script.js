@@ -96,8 +96,8 @@
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-       // thisProduct.element.classList.add('active')
-        //console.log(thisProduct)
+        thisProduct.element.classList.add('active')
+        console.log(thisProduct)
         /* find all active products */
        //const activeProducts = document.querySelectorAll('article.product.active');
         //console.log(activeProducts);
