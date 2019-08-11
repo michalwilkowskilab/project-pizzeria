@@ -88,7 +88,7 @@
       console.log(productHeader);
 
       /* START: click event listener to trigger */
-      const buttonClicked = document.getElementById('product-list');
+      const buttonClicked = thisProduct.element.querySelector(select.menuProduct.clickable);
       buttonClicked.addEventListener('click', function(event){
       console.log('clicked');
 
@@ -96,11 +96,11 @@
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-        thisProduct.element.classList.add('active')
-        console.log(thisProduct)
+       // thisProduct.element.classList.add('active')
+        //console.log(thisProduct)
         /* find all active products */
-        const activeProducts = document.querySelectorAll('article.product.active');
-        console.log(activeProducts);
+       //const activeProducts = document.querySelectorAll('article.product.active');
+        //console.log(activeProducts);
         /* START LOOP: for each active product */
         //for(let active of activeProducts){
         /* START: if the active product isn't the element of thisProduct */
