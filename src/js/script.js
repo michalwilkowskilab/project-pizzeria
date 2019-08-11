@@ -96,13 +96,11 @@
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-        for(let active of productHeader){
-        active.classList.add('active');
-        console.log(active);
-        }
+        thisProduct.element.classList.add('active')
+        console.log(thisProduct)
         /* find all active products */
-        const activeProducts = document.querySelectorAll('product__header');
-        console.log(activeProducts);
+        //const activeProducts = document.querySelectorAll('product__header');
+        //console.log(activeProducts);
         /* START LOOP: for each active product */
         //for(let active of activeProducts){
         /* START: if the active product isn't the element of thisProduct */
