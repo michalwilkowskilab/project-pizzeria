@@ -80,6 +80,17 @@
       menuContainer.appendChild(thisProduct.element);
     }
 
+    getElements(){
+      const thisProduct = this;
+      console.log(thisProduct);
+
+      thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
+      thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
+      thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
+      thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+    }
+
     initAccordion(){
       const thisProduct = this;
       console.log(thisProduct);
@@ -90,14 +101,14 @@
       /* START: click event listener to trigger */
       const buttonClicked = thisProduct.element.querySelector(select.menuProduct.clickable);
       buttonClicked.addEventListener('click', function(event){
-      console.log('clicked');
+        console.log('clicked');
 
         /* prevent default action for event */
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-        thisProduct.element.classList.add('active')
-        console.log(thisProduct)
+        thisProduct.element.classList.add('active');
+        console.log(thisProduct);
         /* find all active products */
         const activeProducts = document.querySelectorAll('article.product.active');
         console.log(activeProducts);
@@ -105,9 +116,9 @@
         for(let active of activeProducts){
         /* START: if the active product isn't the element of thisProduct */
           if(active !== thisProduct.element){
-        /* remove class active for the active product */
-          active.classList.remove('active')
-        /* END: if the active product isn't the element of thisProduct */
+            /* remove class active for the active product */
+            active.classList.remove('active');
+            /* END: if the active product isn't the element of thisProduct */
           }
         /* END LOOP: for each active product */
         }
