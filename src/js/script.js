@@ -126,6 +126,17 @@
         /* END: click event listener to trigger */
       });
     }
+
+    initOrderForm(){
+      const thisProduct = this;
+      console.log(thisProduct);
+    }
+
+    processOrder(){
+      const thisProduct = this;
+      console.log(thisProduct);
+    }
+
   }
 
 
