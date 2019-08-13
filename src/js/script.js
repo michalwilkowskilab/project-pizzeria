@@ -94,13 +94,10 @@
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
     }
 
+
     initAccordion(){
       const thisProduct = this;
       console.log(thisProduct);
-      /* find the clickable trigger (the element that should react to clicking) */
-      const productHeader = document.querySelectorAll('.product__header');
-      console.log(productHeader);
-
       /* START: click event listener to trigger */
       const buttonClicked = thisProduct.element.querySelector(select.menuProduct.clickable);
       buttonClicked.addEventListener('click', function(event){
