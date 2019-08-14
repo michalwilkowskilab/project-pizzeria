@@ -102,23 +102,17 @@
       const buttonClicked = thisProduct.element.querySelector(select.menuProduct.clickable);
       buttonClicked.addEventListener('click', function(event){
         console.log('clicked');
-
         /* prevent default action for event */
         event.preventDefault();
-
-        /* toggle active class on element of thisProduct */
-
         /* find all active products */
         const activeProducts = document.querySelectorAll('article.product.active');
-        //console.log(activeProducts);
         /* START LOOP: for each active product */
         for(let active of activeProducts){
-            /* remove class active for the active product */
-            active.classList.remove('active');
+          /* remove class active for the active product */
+          active.classList.remove('active');
         /* END LOOP: for each active product */
         }
         thisProduct.element.classList.add('active');
-        //console.log(thisProduct);
         /* END: click event listener to trigger */
       });
     }
@@ -153,27 +147,29 @@
       console.log('formData', formData);
 
       /* set variable price to equal thisProduct.data.price */
-
-  /* START LOOP: for each paramId in thisProduct.data.params */
-    /* save the element in thisProduct.data.params with key paramId as const param */
-
-    /* START LOOP: for each optionId in param.options */
+      let price = thisProduct.data.price
+      console.log('CENA', price);
+      /* START LOOP: for each paramId in thisProduct.data.params */
+      /* save the element in thisProduct.data.params with key paramId as const param */
+      for(let param in thisProduct.data.params){
+        console.log('PARAMS', param);
+      /* START LOOP: for each optionId in param.options */
       /* save the element in param.options with key optionId as const option */
-
+      }
       /* START IF: if option is selected and option is not default */
-        /* add price of option to variable price */
+      /* add price of option to variable price */
       /* END IF: if option is selected and option is not default */
       /* START ELSE IF: if option is not selected and option is default */
-        /* deduct price of option from price */
+      /* deduct price of option from price */
       //}
       /* END ELSE IF: if option is not selected and option is default */
-    //}
-    /* END LOOP: for each optionId in param.options */
-  //}
-  /* END LOOP: for each paramId in thisProduct.data.params */
+      //}
+      /* END LOOP: for each optionId in param.options */
+      //}
+      /* END LOOP: for each paramId in thisProduct.data.params */
 
-  /* set the contents of thisProduct.priceElem to be the value of variable price */
-}
+      /* set the contents of thisProduct.priceElem to be the value of variable price */
+    }
 
   }
 
