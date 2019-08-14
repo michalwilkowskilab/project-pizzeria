@@ -147,7 +147,7 @@
       console.log('formData', formData);
 
       /* set variable price to equal thisProduct.data.price */
-      let price = thisProduct.data.price
+      const price = thisProduct.data.price
       console.log('CENA', price);
       /* START LOOP: for each paramId in thisProduct.data.params */
       /* save the element in thisProduct.data.params with key paramId as const param */
@@ -155,22 +155,22 @@
         console.log('PARAMS', param);
       /* START LOOP: for each optionId in param.options */
       /* save the element in param.options with key optionId as const option */
-      }
-      /* START IF: if option is selected and option is not default */
-      /* add price of option to variable price */
-      /* END IF: if option is selected and option is not default */
-      /* START ELSE IF: if option is not selected and option is default */
-      /* deduct price of option from price */
-      //}
-      /* END ELSE IF: if option is not selected and option is default */
-      //}
-      /* END LOOP: for each optionId in param.options */
-      //}
-      /* END LOOP: for each paramId in thisProduct.data.params */
+        for(let option in param.options){
+          console.log('OPTIONS', option);
+        /* START IF: if option is selected and option is not default */
+        /* add price of option to variable price */
+        /* END IF: if option is selected and option is not default */
+        /* START ELSE IF: if option is not selected and option is default */
+        /* deduct price of option from price */
 
+        /* END ELSE IF: if option is not selected and option is default */
+
+        /* END LOOP: for each optionId in param.options */
+        }
+      /* END LOOP: for each paramId in thisProduct.data.params */
+      }
       /* set the contents of thisProduct.priceElem to be the value of variable price */
     }
-
   }
 
 
