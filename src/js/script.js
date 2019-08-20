@@ -148,15 +148,15 @@
 
       /* set variable price to equal thisProduct.data.price */
       const price = thisProduct.data.price;
-      console.log('CENA', price);
+      console.log('Price:', price);
       /* START LOOP: for each paramId in thisProduct.data.params */
       /* save the element in thisProduct.data.params with key paramId as const param */
       for(let param in thisProduct.data.params){
-        console.log('PARAMS', param, thisProduct.data.params[param]);
+        console.log('Params:', param, thisProduct.data.params[param])
         /* START LOOP: for each optionId in param.options */
         /* save the element in param.options with key optionId as const option */
         for(let option in param.options){
-          console.log('OPTIONS', option)
+        console.log('Options:', option, param.options[option])
           /* START IF: if option is selected and option is not default */
 
           /* add price of option to variable price */
