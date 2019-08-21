@@ -147,32 +147,39 @@
       console.log('formData', formData);
 
       /* set variable price to equal thisProduct.data.price */
-      const price = thisProduct.data.price;
+      let price = thisProduct.data.price;
       console.log('Price:', price);
       /* START LOOP: for each paramId in thisProduct.data.params */
       /* save the element in thisProduct.data.params with key paramId as const param */
       for(let param in thisProduct.data.params){
-        console.log('Params:', param, thisProduct.data.params[param])
+        console.log('Params:', param, thisProduct.data.params[param]);
+        let params = thisProduct.data.params[param];
+        console.log(params);
         /* START LOOP: for each optionId in param.options */
         /* save the element in param.options with key optionId as const option */
-        for(let option in param.options){
-        console.log('Options:', option, param.options[option])
+        for(let option in params.options){
+          console.log('Options:', option);
+          let options = params.options[option];
+          console.log('options', options);
           /* START IF: if option is selected and option is not default */
-
+          const optionSelected = formData.hasOwnProperty(param) && formData[param].indexOf(option) > -1;
+          console.log('optionSelected:', options.default);
+          if(optionSelected && !options.default){
           /* add price of option to variable price */
-
+            price = price + options.price;
           /* END IF: if option is selected and option is not default */
-
+          }
           /* START ELSE IF: if option is not selected and option is default */
           /* deduct price of option from price */
-
+          else if(!optionSelected && options.default){
           /* END ELSE IF: if option is not selected and option is default */
-
+            price = price - options.price;}
         /* END LOOP: for each optionId in param.options */
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
       }
       /* set the contents of thisProduct.priceElem to be the value of variable price */
+      thisProduct.priceElem.innerHTML = price;
     }
   }
 
