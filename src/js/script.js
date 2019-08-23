@@ -175,8 +175,20 @@
           /* END ELSE IF: if option is not selected and option is default */
             price = price - options.price;}
           /* END LOOP: for each optionId in param.options */
-          let images = thisProduct.data.images;
-          console.log('images:', images)
+          let image = thisProduct.data.images;
+          console.log('image:', image)
+
+          if(optionSelected){
+            for(let picture in image){
+              console.log('picture:', picture, image[picture]);
+              image[picture].classList.add('active');
+            }else{
+              for(let picture in image){
+                console.log('picture:', picture, image[picture]);
+                image[picture].classList.remove('active');
+            }
+
+          }
 
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
