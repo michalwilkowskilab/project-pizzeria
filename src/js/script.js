@@ -177,7 +177,8 @@
             price = price - options.price;}
 
           /* Start block if and else with loop */
-
+          const images = thisProduct.imageWrapper;
+          console.log('pictures:', images)
 
         /* END LOOP: for each optionId in param.options */
         }
