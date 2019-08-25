@@ -92,6 +92,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
 
@@ -174,22 +175,11 @@
           else if(!optionSelected && options.default){
           /* END ELSE IF: if option is not selected and option is default */
             price = price - options.price;}
-          /* END LOOP: for each optionId in param.options */
-          let image = thisProduct.data.images;
-          console.log('image:', image)
 
-          if(optionSelected){
-            for(let picture in image){
-              console.log('picture:', picture, image[picture]);
-              image[picture].classList.add('active');
-            }else{
-              for(let picture in image){
-                console.log('picture:', picture, image[picture]);
-                image[picture].classList.remove('active');
-            }
+          /* Start block if and else with loop */
 
-          }
 
+        /* END LOOP: for each optionId in param.options */
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
       }
