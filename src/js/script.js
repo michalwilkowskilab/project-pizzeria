@@ -177,24 +177,20 @@
             price = price - options.price;}
 
           /* Start block if and else with loop */
-          let images = thisProduct.data.images;
+          const images = thisProduct.imageWrapper;
           console.log('images:', images);
           let classActive = classNames.menuProduct.imageVisible;
-          console.log('classActive:', classActive)
+          console.log('classActive:', classActive);
 
-          if(optionSelected){
-            for(let image in images){
-              let pictures = images[image]
-              pictures = pictures + classActive;
-              console.log('pictures:', pictures);
-            }
-          }else{
-            for(let image in images){
-              let pictures = images[image]
-              pictures = pictures - classActive;
-              console.log('pictures:', pictures);
+          for(let image in images){
+            console.log('image:', image);
+            if(optionSelected){
+              image.classList.add(classActive);
+            }else{
+              image.classList.remove(classActive);
             }
           }
+
         /* END LOOP: for each optionId in param.options */
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
