@@ -174,23 +174,23 @@
           /* deduct price of option from price */
           else if(!optionSelected && options.default){
           /* END ELSE IF: if option is not selected and option is default */
-            price = price - options.price;}
-
+            price = price - options.price;
+          }
           /* Start block if and else with loop */
-          const images = thisProduct.imageWrapper;
+          const images = thisProduct.imageWrapper.querySelectorAll('img');
           console.log('images:', images);
-          let classActive = classNames.menuProduct.imageVisible;
-          console.log('classActive:', classActive);
 
-          for(let image in images){
+          for(let image of images){
             console.log('image:', image);
-            if(optionSelected){
-              image.classList.add(classActive);
-            }else{
-              image.classList.remove(classActive);
+            const className =  param +'-'+ option;
+            console.log('className:', className);
+            if(image.contains(className) && optionSelected){
+              image.classList.add('active');
+            }
+            else if(image.contains(className) && !optionSelected){
+              image.classList.remove('active');
             }
           }
-
         /* END LOOP: for each optionId in param.options */
         }
       /* END LOOP: for each paramId in thisProduct.data.params */
