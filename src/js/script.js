@@ -95,7 +95,6 @@
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
-      console.log('WIDGET:', thisProduct.amountWidgetElem)
     }
 
 
@@ -213,8 +212,31 @@
     constructor(element){
       const thisWidget = this;
 
+      thisWidget.getElements(element);
+      thisWidget.setValue(thisWidget.input.value);
+
       console.log('AomuntWidget:', thisWidget);
       console.log('constructor arguments:', element);
+    }
+
+    getElements(element){
+      const thisWidget = this;
+
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+      thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+      thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+    }
+    setValue(value){
+      const thisWidget = this;
+
+
+      const newValue = parseInt(value);
+
+      /* TODO: Add validation */
+
+      thisWidget.value = newValue;
+      thisWidget.input.value = thisWidget.value;
     }
   }
 
