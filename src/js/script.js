@@ -85,7 +85,7 @@
 
     getElements(){
       const thisProduct = this;
-      console.log('getElements', thisProduct);
+      //console.log('getElements', thisProduct);
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
@@ -98,11 +98,11 @@
 
     initAccordion(){
       const thisProduct = this;
-      console.log(thisProduct);
+      //console.log(thisProduct);
       /* START: click event listener to trigger */
       const buttonClicked = thisProduct.element.querySelector(select.menuProduct.clickable);
       buttonClicked.addEventListener('click', function(event){
-        console.log('clicked');
+        //console.log('clicked');
         /* prevent default action for event */
         event.preventDefault();
         /* find all active products */
@@ -120,7 +120,7 @@
 
     initOrderForm(){
       const thisProduct = this;
-      console.log('initOrderForm', thisProduct);
+      //console.log('initOrderForm', thisProduct);
 
       thisProduct.form.addEventListener('submit', function(event){
         event.preventDefault();
@@ -141,30 +141,30 @@
 
     processOrder(){
       const thisProduct = this;
-      console.log('processOrder', thisProduct);
+      //console.log('processOrder', thisProduct);
 
       /* read all data from the form (using utils.serializeFormToObject) and save it to const formData */
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log('formData', formData);
+      //console.log('formData', formData);
 
       /* set variable price to equal thisProduct.data.price */
       let price = thisProduct.data.price;
-      console.log('Price:', price);
+      //console.log('Price:', price);
       /* START LOOP: for each paramId in thisProduct.data.params */
       /* save the element in thisProduct.data.params with key paramId as const param */
       for(let param in thisProduct.data.params){
-        console.log('Params:', param, thisProduct.data.params[param]);
+        //console.log('Params:', param, thisProduct.data.params[param]);
         let params = thisProduct.data.params[param];
-        console.log(params);
+        //console.log(params);
         /* START LOOP: for each optionId in param.options */
         /* save the element in param.options with key optionId as const option */
         for(let option in params.options){
-          console.log('Options:', option);
+          //console.log('Options:', option);
           let options = params.options[option];
-          console.log('options', options);
+          //console.log('options', options);
           /* START IF: if option is selected and option is not default */
           const optionSelected = formData.hasOwnProperty(param) && formData[param].indexOf(option) > -1;
-          console.log('optionSelected:', options.default);
+          //console.log('optionSelected:', options.default);
           if(optionSelected && !options.default){
           /* add price of option to variable price */
             price = price + options.price;
@@ -178,12 +178,12 @@
           }
           /* Start block if and else with loop */
           const images = thisProduct.imageWrapper.querySelectorAll('img');
-          console.log('images:', images);
+          //console.log('images:', images);
 
           for(let image of images){
-            console.log('image:', image);
+            //console.log('image:', image);
             const className = param +'-'+ option;
-            console.log('className:', className);
+            //console.log('className:', className);
             if(image.classList.contains(className) && optionSelected){
               image.classList.add('active');
             }
@@ -200,6 +200,14 @@
     }
   }
 
+  class AmountWidget{
+    constructor(element){
+      const thisWidget = this;
+
+      console.log('AomuntWidget:', thisWidget);
+      console.log('constructor arguments:', element);
+    }
+  }
 
   const app = {
     initMenu: function(){
