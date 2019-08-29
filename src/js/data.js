@@ -86,7 +86,7 @@ dataSource.products = {
     price: 9,
     description: 'A delicious salad made of fresh, home-grown products on a crispy lettuce base.',
     images: [
-      '<img class="active src="images/salad/plate.svg">',
+      '<img class="active" src="images/salad/plate.svg">',
       '<img class= ingredients-cucumber" src="images/salad/cucumber.svg" style="z-index: 1;">',
       '<img class="ingredients-tomatoes" src="images/salad/tomatoes.svg" style="z-index: 2;">',
       '<img class="ingredients-olives" src="images/salad/salad-olives.svg" style="z-index: 3;">',

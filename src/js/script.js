@@ -182,12 +182,12 @@
 
           for(let image of images){
             console.log('image:', image);
-            const className =  param +'-'+ option;
+            const className = param +'-'+ option;
             console.log('className:', className);
-            if(image.contains(className) && optionSelected){
+            if(image.classList.contains(className) && optionSelected){
               image.classList.add('active');
             }
-            else if(image.contains(className) && !optionSelected){
+            else if(image.classList.contains(className) && !optionSelected){
               image.classList.remove('active');
             }
           }
