@@ -204,7 +204,7 @@
     initAmountWidget(){
       const thisProduct = this;
 
-      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem)
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
   }
 
@@ -237,6 +237,11 @@
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
+    }
+
+    initActions(){
+      const thisWidget = this;
+      console.log(thisWidget);
     }
   }
 
