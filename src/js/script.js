@@ -255,10 +255,10 @@
         if(!minValue != minValue){
           thisWidget.value = newValue && thisWidget.announce();
         }
-        else if(!minvalue >= minValue){
+        else if(!minValue >= minValue){
           thisWidget.value = newValue && thisWidget.announce();
         }
-        else if(!minvalue <= minValue){
+        else if(!minValue <= minValue){
           thisWidget.value = newValue && thisWidget.announce();
         }
       }
@@ -276,12 +276,12 @@
 
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value - 1)
+        thisWidget.setValue(thisWidget.value - 1);
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value + 1)
+        thisWidget.setValue(thisWidget.value + 1);
       });
     }
 
