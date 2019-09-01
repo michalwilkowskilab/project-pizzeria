@@ -220,6 +220,7 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
@@ -243,8 +244,8 @@
 
       /* TODO: Add validation */
 
-      thisWidget.value = newValue;
-      thisWidget.announce();
+      //thisWidget.value = newValue;
+      //thisWidget.announce();
       thisWidget.input.value = thisWidget.value;
 
       const defaultMin = settings.amountWidget.defaultMin;
