@@ -214,6 +214,7 @@
 
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
 
       console.log('AomuntWidget:', thisWidget);
       console.log('constructor arguments:', element);
@@ -242,6 +243,21 @@
     initActions(){
       const thisWidget = this;
       console.log(thisWidget);
+
+      thisWidget.input.addEventListener('change', function(event){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      thisWidget.linkDecrease.addEventListener('click', function(event){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value - 1)
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function(event){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value + 1)
+      });
     }
   }
 
