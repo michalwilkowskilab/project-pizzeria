@@ -246,6 +246,22 @@
       thisWidget.value = newValue;
       thisWidget.announce();
       thisWidget.input.value = thisWidget.value;
+
+      const defaultMin = settings.amountWidget.defaultMin;
+      console.log('defaultMin:', defaultMin);
+
+      for(let minValue in defaultMin){
+        if(!minValue != minValue){
+          thisWidget.value = newValue && thisWidget.announce();
+        }
+        else if(!minvalue >= minValue){
+          thisWidget.value = newValue && thisWidget.announce();
+        }
+        else if(!minvalue <= minValue){
+          thisWidget.value = newValue && thisWidget.announce();
+        }
+      }
+
     }
 
     initActions(){
