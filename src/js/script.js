@@ -239,30 +239,27 @@
     setValue(value){
       const thisWidget = this;
 
-
       const newValue = parseInt(value);
 
       /* TODO: Add validation */
 
-      //thisWidget.value = newValue;
-      //thisWidget.announce();
+      thisWidget.value = newValue;
+      thisWidget.announce();
       thisWidget.input.value = thisWidget.value;
 
       const defaultMin = settings.amountWidget.defaultMin;
       console.log('defaultMin:', defaultMin);
+      const defaultMax = settings.amountWidget.defaultMax;
+      console.log('defaultMax:', defaultMax);
 
-      for(let minValue in defaultMin){
-        if(!minValue != minValue){
-          thisWidget.value = newValue && thisWidget.announce();
+      for(let input in thisWidget.value){
+        if(input <= defaultMax){
+          newValue && thisWidget.announce();
         }
-        else if(!minValue >= minValue){
-          thisWidget.value = newValue && thisWidget.announce();
-        }
-        else if(!minValue <= minValue){
-          thisWidget.value = newValue && thisWidget.announce();
+        else if(input >= defaultMin){
+          newValue && thisWidget.announce();
         }
       }
-
     }
 
     initActions(){
