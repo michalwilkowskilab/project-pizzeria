@@ -242,23 +242,12 @@
       const newValue = parseInt(value);
 
       /* TODO: Add validation */
-
-      thisWidget.value = newValue;
-      thisWidget.announce();
       thisWidget.input.value = thisWidget.value;
-
-      const defaultMin = settings.amountWidget.defaultMin;
-      console.log('defaultMin:', defaultMin);
-      const defaultMax = settings.amountWidget.defaultMax;
-      console.log('defaultMax:', defaultMax);
-
-      for(let input in thisWidget.value){
-        if(input <= defaultMax){
-          newValue && thisWidget.announce();
-        }
-        else if(input >= defaultMin){
-          newValue && thisWidget.announce();
-        }
+      if(newValue >= 1 && newValue <= 9)
+      {
+        thisWidget.announce();
+        thisWidget.value = newValue;
+        console.log('newValue:', newValue);
       }
     }
 
