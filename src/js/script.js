@@ -352,6 +352,13 @@
       thisApp.data = dataSource;
     },
 
+    initCart: function(){
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.Cart = new Cart(cartElem);
+    },
+
     init: function(){
       const thisApp = this;
       //for(let productData in thisApp.data.products){
@@ -365,6 +372,7 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
