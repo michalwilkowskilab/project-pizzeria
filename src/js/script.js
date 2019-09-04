@@ -258,8 +258,8 @@
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
-      console.log('AomuntWidget:', thisWidget);
-      console.log('constructor arguments:', element);
+      //console.log('AomuntWidget:', thisWidget);
+      //console.log('constructor arguments:', element);
     }
 
     getElements(element){
@@ -284,14 +284,14 @@
       if(newValue >= minValue && newValue <= maxValue)
       {
         thisWidget.value = newValue;
-        console.log('newValue:', newValue);
+        //console.log('newValue:', newValue);
         thisWidget.announce();
       }
     }
 
     initActions(){
       const thisWidget = this;
-      console.log(thisWidget);
+      //console.log(thisWidget);
 
       thisWidget.input.addEventListener('change', function(event){
         event.preventDefault();
