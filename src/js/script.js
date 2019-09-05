@@ -342,6 +342,12 @@
     initActions(){
     const thisCart = this;
 
+      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
+      event.preventDefault();
+      thisCart.dom.wrapper .classList.add(classNames.cart.wrapperActive);
+      console.log('cartTrigger', thisCart.dom.toggleTrigger);
+      });
+
     }
   }
 
