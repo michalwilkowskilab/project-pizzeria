@@ -324,7 +324,7 @@
       thisCart.products = [];
 
       thisCart.getElements(element);
-
+      thisCart.initActions();
       console.log('new Cart', thisCart);
     }
 
@@ -337,6 +337,11 @@
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       console.log('cartTrigger:', thisCart.dom.toggleTrigger)
+    }
+
+    initActions(){
+    const thisCart = this;
+
     }
   }
 
