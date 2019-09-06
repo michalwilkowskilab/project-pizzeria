@@ -221,6 +221,13 @@
             const className = paramId +'-'+ optionId;
             //console.log('className:', className);
             if(image.classList.contains(className) && optionSelected){
+              if(!thisProduct.params[paramId]){
+                thisProduct.params[paramId] = {
+                  label: params.label,
+                  options: {},
+                };
+              }
+              thisProduct.params[paramId].options[optionId] = option.label;
               image.classList.add('active');
             }
             else if(image.classList.contains(className) && !optionSelected){
