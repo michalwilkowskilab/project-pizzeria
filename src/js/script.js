@@ -221,13 +221,13 @@
             const className = paramId +'-'+ optionId;
             //console.log('className:', className);
             if(image.classList.contains(className) && optionSelected){
-              if(!thisProduct.params[paramId]){
-                thisProduct.params[paramId] = {
-                  label: params.label,
+              if(!thisProduct.data.params[paramId]){
+                thisProduct.data.params[paramId] = {
+                  label: param.label,
                   options: {},
                 };
               }
-              thisProduct.params[paramId].options[optionId] = option.label;
+              thisProduct.data.params[paramId].options[optionId] = options.label;
               image.classList.add('active');
             }
             else if(image.classList.contains(className) && !optionSelected){
@@ -254,6 +254,7 @@
         event.preventDefault();
         thisProduct.processOrder();
       });
+      console.log('thisProduct.params', thisProduct.data.params)
     }
 
     addToCart(){
@@ -367,7 +368,7 @@
       const thisCart = this;
       console.log(thisCart);
 
-      console.log('adding product', menuProduct)
+      console.log('adding product', menuProduct);
     }
   }
 
