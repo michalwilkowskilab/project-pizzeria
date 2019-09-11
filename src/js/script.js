@@ -184,6 +184,8 @@
       //console.log('formData', formData);
 
       /* set variable price to equal thisProduct.data.price */
+      thisProduct.params = {};
+
       let price = thisProduct.data.price;
       //console.log('Price:', price);
       /* START LOOP: for each paramId in thisProduct.data.params */
@@ -212,6 +214,13 @@
           /* END ELSE IF: if option is not selected and option is default */
             price = price - options.price;
           }
+          else if(optionSelected && !thisProduct.params[paramId]){
+            thisProduct.params[paramId] = {
+              label: params.label,
+              options: {},
+            };
+          }
+          thisProduct.params[paramId].options[optionId] = options.label;
           /* Start block if and else with loop */
           const images = thisProduct.imageWrapper.querySelectorAll('img');
           //console.log('images:', images);
@@ -221,13 +230,6 @@
             const className = paramId +'-'+ optionId;
             //console.log('className:', className);
             if(image.classList.contains(className) && optionSelected){
-              if(!thisProduct.data.params[paramId]){
-                thisProduct.data.params[paramId] = {
-                  label: param.label,
-                  options: {},
-                };
-              }
-              thisProduct.data.params[paramId].options[optionId] = options.label;
               image.classList.add('active');
             }
             else if(image.classList.contains(className) && !optionSelected){
@@ -243,6 +245,7 @@
       thisProduct.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
+      console.log('Product params:', thisProduct.params)
     }
 
     initAmountWidget(){
@@ -254,7 +257,6 @@
         event.preventDefault();
         thisProduct.processOrder();
       });
-      console.log('thisProduct.params', thisProduct.data.params)
     }
 
     addToCart(){
@@ -368,7 +370,7 @@
       const thisCart = this;
       console.log(thisCart);
 
-      console.log('adding product', menuProduct);
+      console.log('adding product', menuProduct)
     }
   }
 
