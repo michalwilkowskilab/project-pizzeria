@@ -374,6 +374,12 @@
       const thisCart = this;
       console.log(thisCart);
 
+      const generatedHTML = templates.menuProduct(thisCart.params);
+      //console.log('generatedHTML:', generatedHTML)
+      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      console.log('thisCart.element:',thisCart.element)
+      //thisCart.dom.productList.appenChild(thisCart.element);
+
       console.log('adding product', menuProduct)
     }
   }
