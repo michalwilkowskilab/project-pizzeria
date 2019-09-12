@@ -245,7 +245,7 @@
       thisProduct.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
-      console.log('Product params:', thisProduct.params)
+      console.log('Product params:', thisProduct.params);
     }
 
     initAmountWidget(){
@@ -264,6 +264,7 @@
 
       thisProduct.name = thisProduct.data.name;
       thisProduct.amount = thisProduct.amountWidget.value;
+      console.log('thisProduct.name:', thisProduct.name);
 
       app.cart.add(thisProduct);
     }
@@ -357,7 +358,7 @@
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
-      console.log('thisCart.dom.productList:', thisCart.dom.productList)
+      console.log('thisCart.dom.productList:', thisCart.dom.productList);
     }
 
     initActions(){
@@ -374,13 +375,18 @@
       const thisCart = this;
       console.log(thisCart);
 
-      const generatedHTML = templates.menuProduct(thisCart.params);
+      const generatedHTML = templates.menuProduct(menuProduct);
       //console.log('generatedHTML:', generatedHTML)
-      thisCart.element = utils.createDOMFromHTML(generatedHTML);
-      console.log('thisCart.element:',thisCart.element)
-      //thisCart.dom.productList.appenChild(thisCart.element);
 
-      console.log('adding product', menuProduct)
+      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      console.log('thisCart.element:',thisCart.element);
+
+      const productList = thisCart.dom.productList;
+      console.log('productList:', productList);
+
+      productList.appendChild(thisCart.element);
+
+      console.log('adding product', menuProduct);
     }
   }
 
