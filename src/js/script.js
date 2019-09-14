@@ -375,7 +375,7 @@
       const thisCart = this;
       console.log(thisCart);
 
-      const generatedHTML = templates.menuProduct(menuProduct);
+      const generatedHTML = templates.cartProduct(menuProduct);
       //console.log('generatedHTML:', generatedHTML)
 
       thisCart.element = utils.createDOMFromHTML(generatedHTML);
