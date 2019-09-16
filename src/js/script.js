@@ -396,6 +396,12 @@
   class CartProduct {
     constructor(menuProduct, element){
       thisCartProduct = this;
+
+      thisCartProudct.id = menuProduct.id;
+      thisCartProudct.name = menuProduct.name;
+      thisCartProudct.price = menuProduct.price;
+      thisCartProudct.priceSingle = menuProduct.priceSingle;
+      thisCartProudct.amount = menuProduct.amount;
     }
   }
 
