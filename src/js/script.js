@@ -386,6 +386,9 @@
 
       productList.appendChild(thisCart.element);
 
+      thisCart.products.push(menuProduct);
+      console.log('thisCart.products:', thisCart.products);
+
       console.log('adding product', menuProduct);
     }
   }
