@@ -393,6 +393,12 @@
     }
   }
 
+  class CartProduct {
+    constructor(menuProduct, element){
+      thisCartProduct = this;
+    }
+  }
+
   const app = {
     initMenu: function(){
       const thisApp = this;
