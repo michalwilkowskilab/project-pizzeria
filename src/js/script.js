@@ -402,6 +402,7 @@
       thisCartProudct.price = menuProduct.price;
       thisCartProudct.priceSingle = menuProduct.priceSingle;
       thisCartProudct.amount = menuProduct.amount;
+      thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
     }
   }
 
