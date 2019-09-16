@@ -338,7 +338,7 @@
     }
   }
 
-  class Cart {
+  class Cart{
     constructor(element){
       const thisCart = this;
 
@@ -386,33 +386,40 @@
 
       productList.appendChild(thisCart.element);
 
-      thisCart.products.push(menuProduct);
+      thisCart.products.push(new CartProduct(menuProduct, thisCart.element/*(generatedDOM)*/));
       console.log('thisCart.products:', thisCart.products);
 
       console.log('adding product', menuProduct);
     }
   }
 
-  class CartProduct {
+  class CartProduct{
     constructor(menuProduct, element){
-      thisCartProduct = this;
+      const thisCartProduct = this;
 
-      thisCartProudct.id = menuProduct.id;
-      thisCartProudct.name = menuProduct.name;
-      thisCartProudct.price = menuProduct.price;
-      thisCartProudct.priceSingle = menuProduct.priceSingle;
-      thisCartProudct.amount = menuProduct.amount;
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.name;
+      thisCartProduct.price = menuProduct.price;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
+      thisCartProduct.amount = menuProduct.amount;
       thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
 
       thisCartProduct.getElements(element);
 
-      console.log('thisCartProduct:', thisCartProduct)
+      console.log('new CartProduct:', thisCartProduct);
+      console.log('productData:', menuProduct);
     }
 
     getElements(element){
-      thisCartProduct = this;
+      const thisCartProduct = this;
 
       thisCartProduct.dom = {};
+
+      thisCartProduct.dom.wrapper = element;
+      thisCartProduct.dom.amountWidget = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
+      thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
+      thisCartProduct.dom.edit = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.edit);
+      thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
     }
   }
 
