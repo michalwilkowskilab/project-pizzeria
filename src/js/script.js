@@ -403,6 +403,16 @@
       thisCartProudct.priceSingle = menuProduct.priceSingle;
       thisCartProudct.amount = menuProduct.amount;
       thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
+
+      thisCartProduct.getElements(element);
+
+      console.log('thisCartProduct:', thisCartProduct)
+    }
+
+    getElements(element){
+      thisCartProduct = this;
+
+      thisCartProduct.dom = {};
     }
   }
 
