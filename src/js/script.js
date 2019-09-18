@@ -425,12 +425,13 @@
     initAmountWidget(){
       const thisCartProduct = this;
 
-      thisProduct.amountWidget = new AmountWidget(thisCartProduct.amountWidgetElem);
+      thisCartProduct.amountWidget = new AmountWidget(select.cart.productList);
 
       thisCartProduct.amountWidgetElem.addEventListener('updated', function(event){
         event.preventDefault();
-        thisCartProduct.processOrder();
+
       });
+    }
   }
 
   const app = {
