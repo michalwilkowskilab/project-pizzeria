@@ -405,6 +405,7 @@
       thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
 
       thisCartProduct.getElements(element);
+      thisCartProduct.initAmountWidget();
 
       console.log('new CartProduct:', thisCartProduct);
       console.log('productData:', menuProduct);
@@ -425,11 +426,13 @@
     initAmountWidget(){
       const thisCartProduct = this;
 
-      thisCartProduct.amountWidget = new AmountWidget(select.cart.productList);
+      thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
 
-      thisCartProduct.amountWidgetElem.addEventListener('updated', function(event){
+      thisCartProduct.dom.amountWidget.addEventListener('updated', function(event){
         event.preventDefault();
-
+        thisCartProduct.amount = thisCartProduct.amountWidget.value;
+        thisCartProduct.price = thisCartProduct.priceSingle * thisCartProduct.amount;
+        thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
       });
     }
   }
