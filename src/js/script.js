@@ -421,6 +421,16 @@
       thisCartProduct.dom.edit = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.edit);
       thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
     }
+
+    initAmountWidget(){
+      const thisCartProduct = this;
+
+      thisProduct.amountWidget = new AmountWidget(thisCartProduct.amountWidgetElem);
+
+      thisCartProduct.amountWidgetElem.addEventListener('updated', function(event){
+        event.preventDefault();
+        thisCartProduct.processOrder();
+      });
   }
 
   const app = {
