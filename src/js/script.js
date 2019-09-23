@@ -343,7 +343,7 @@
       const thisCart = this;
 
       thisCart.products = [];
-      thisCart.deliveryFree = settings.cart.defaultDeliveryFee;
+      thisCart.deliveryFee = settings.cart.defaultDeliveryFee;
       console.log('thisCart.deliveryFree:', thisCart.deliveryFree)
 
       thisCart.getElements(element);
@@ -392,6 +392,10 @@
       console.log('thisCart.products:', thisCart.products);
 
       console.log('adding product', menuProduct);
+    }
+    update(){
+      const thisCart = this;
+      console.log(thisCart);
     }
   }
 
