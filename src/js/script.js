@@ -343,6 +343,8 @@
       const thisCart = this;
 
       thisCart.products = [];
+      thisCart.deliveryFree = settings.cart.defaultDeliveryFee;
+      console.log('thisCart.deliveryFree:', thisCart.deliveryFree)
 
       thisCart.getElements(element);
       thisCart.initActions();
