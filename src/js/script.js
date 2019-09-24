@@ -393,18 +393,26 @@
       console.log('thisCart.products:', thisCart.products);
 
       console.log('adding product', menuProduct);
+
+      thisCart.update();
+      console.log('totalNumber:', thisCart.totalNumber);
+      console.log('subtotalPrice:', thisCart.subtotalPrice);
+      console.log('thisCart.totalPrice:', thisCart.totalPrice);
     }
+
     update(){
       const thisCart = this;
       console.log(thisCart);
 
-      totalNumber = 0;
-      subtotalPrice = 0;
+      thisCart.totalNumber = 0;
+      thisCart.subtotalPrice = 0;
 
       for(let product of thisCart.products){
-        thisCart.subtotalPrice + product.price;
-        thisCart.totalNumber + product.amount;
+        thisCart.subtotalPrice += product.price;
+        thisCart.totalNumber += product.amount;
       }
+
+      thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
     }
   }
 
