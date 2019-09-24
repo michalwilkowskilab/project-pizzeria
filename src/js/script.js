@@ -1,3 +1,4 @@
+
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
 {
@@ -344,7 +345,7 @@
 
       thisCart.products = [];
       thisCart.deliveryFee = settings.cart.defaultDeliveryFee;
-      console.log('thisCart.deliveryFree:', thisCart.deliveryFree)
+      console.log('thisCart.deliveryFree:', thisCart.deliveryFree);
 
       thisCart.getElements(element);
       thisCart.initActions();
@@ -396,6 +397,13 @@
     update(){
       const thisCart = this;
       console.log(thisCart);
+
+      totalNumber = 0;
+      subtotalPrice = 0;
+
+      for(let product of thisCart.products){
+
+      }
     }
   }
 
