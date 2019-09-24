@@ -402,7 +402,8 @@
       subtotalPrice = 0;
 
       for(let product of thisCart.products){
-
+        thisCart.subtotalPrice + product.price;
+        thisCart.totalNumber + product.amount;
       }
     }
   }
