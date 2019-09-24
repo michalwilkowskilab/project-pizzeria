@@ -379,6 +379,10 @@
         thisCart.dom.wrapper .classList.toggle(classNames.cart.wrapperActive);
         console.log('cartTrigger', thisCart.dom.toggleTrigger);
       });
+
+      thisCart.dom.productList.addEventListener('updated', function(){
+        thisCart.update();
+      });
     }
 
     add(menuProduct){
