@@ -438,7 +438,13 @@
 
     remove(cartProduct){
       console.log(cartProduct)
-      thisCart = this;
+      const thisCart = this;
+
+      const index = [thisCart.products];
+      console.log('index:', index);
+
+      const removedIndex = index.splice(thisCart.products, 0);
+      console.log('removedIndex:', removedIndex)
     }
   }
 
