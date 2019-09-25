@@ -445,6 +445,8 @@
 
       const removedIndex = index.splice(thisCart.products, 0);
       console.log('removedIndex:', removedIndex)
+
+      cartProduct.dom.wrapper.remove();
     }
   }
 
